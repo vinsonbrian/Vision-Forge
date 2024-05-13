@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Pong with ChatGPT</title>
+    <style>
+        /* Basic styling for the game canvas */
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f0f0; }
+        canvas { background-color: #000; }
+    </style>
+</head>
+<body>
+    <canvas id="pongCanvas"></canvas>
+    <script>
+        // Basic setup for Pong game, with game logic to be completed
+        const canvas = document.getElementById('pongCanvas');
+        const context = canvas.getContext('2d');
+
+        canvas.width = 800;
+        canvas.height = 400;
+
+        // Function to draw the ball
+        function drawBall() {
+            context.fillStyle = 'white';
+            context.beginPath();
+            context.arc(canvas.width / 2, canvas.height / 2, 10, 0, Math.PI*2, true);
+            context.closePath();
+            context.fill();
+        }
+
+        // Main game function
+        function game() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            drawBall();
+            // Game logic goes here
+        }
+
+        // Set game to update
+        setInterval(game, 1000 / 30); // Updating the game 30 times per second
+    </script>
+</body>
+</html>
